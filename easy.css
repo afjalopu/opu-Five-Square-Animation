@@ -1,0 +1,134 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+section
+{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    background-color: rgb(47, 223, 223);
+    animation: section 4s linear infinite;
+}
+@keyframes section
+{
+    25%{
+        background-color: yellow;
+    }
+    50%{
+        background-color: chartreuse;
+    } 
+    75%{
+        background-color: rgb(252, 132, 152);
+    } 
+    100%{
+        background-color: #fa591f;
+    } 
+    /* Changing the Colour of the total Screen  */
+}
+
+.loader
+{
+    position: relative;
+    height: 50px;
+    width: 50px;
+    background-color: rgb(0, 0, 0);
+    animation: loader 1s linear infinite;
+    /* Position of loader */
+}
+@keyframes loader
+{
+    0%{
+        transform: rotate(90deg);
+    }
+
+    50%,100%{
+        transform: rotate(0deg);
+    }
+    
+    /* Rotation of the Loader*/
+
+}
+.loader div
+{
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    background-color: rgb(0, 0, 0);
+    animation: loaderdiv 1s linear infinite;
+        /* Position of loader-div */
+}
+ @keyframes loaderdiv
+{
+    0%{
+        transform: rotate(0deg);
+    }
+    50%{
+        transform: rotate(180deg);
+    }
+    100%{
+        transform: rotate(180deg);    
+    } 
+    /* Rotation of the Loader-Div */
+}
+
+.loader div:nth-child(1)
+{
+    top: -50px;
+    border: 1px solid rgb(54, 49, 49);
+    transform-origin: bottom right;
+    /* First Div  */
+}
+.loader div:nth-child(1)::before
+{
+    background-color: yellow;
+}
+
+.loader div:nth-child(2)
+{
+    left: -50px;
+    border: 1px solid rgb(54, 49, 49);
+    transform-origin: top right;
+    /* second Div */
+}
+.loader div:nth-child(2)::before
+{
+    background-color: chartreuse;
+}
+
+.loader div:nth-child(3)
+{
+    top: 50px;
+    border: 1px solid rgb(54, 49, 49);
+    transform-origin: top left;
+    /* third Div */
+}
+.loader div:nth-child(3)::before
+{
+    background-color: rgb(252, 132, 152);
+}
+.loader div:nth-child(4)
+{
+    left: 50px;
+    border: 1px solid rgb(54, 49, 49);
+    transform-origin: bottom left;
+    /* Fourth Div */
+}
+.loader div:nth-child(4)::before
+{
+    background-color: #fa591f;
+}
+.loader::before, .loader div::before
+{
+    content: '';
+    position: absolute;
+    top: 2px;
+    bottom: 2px;
+    left: 2px;
+    right: 2px;
+    background-color: rgb(255, 255, 255);
+    
+    /* taking extra space of loader and loader-Div from all side and Colouring White  */
+}
